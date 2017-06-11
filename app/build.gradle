@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "com.nickming.kotlinlearning"
+        minSdkVersion 21
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding{
+        enabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
+
+    def dependencies=rootProject.ext.dependencies
+
+    compile dependencies.supportAppCompat
+    compile dependencies.supportDesign
+    compile dependencies.supportRecyclerview
+    compile dependencies.supportCardView
+    compile dependencies.supportMultidex
+
+    compile dependencies.rxJava
+    compile dependencies.rxAndroid
+
+    compile dependencies.gson
+    compile dependencies.retrofit
+    compile dependencies.retrofitRxjavaAdapter
+    compile dependencies.retrofitGsonConverter
+    compile dependencies.okhttp3
+    compile dependencies.okhttpLoggingInterceptor
+
+    compile dependencies.glide
+    compile dependencies.dagger
+    kapt dependencies.daggerCompiler
+    provided dependencies.javaxAnnotation
+
+//    compile dependencies.kotlinStdlib
+//    compile dependencies.kotlinReflect
+
+    kapt "com.android.databinding:compiler:2.3.0"
+}
+
+kapt {
+    generateStubs = true
+}
+
+repositories {
+    mavenCentral()
+}
