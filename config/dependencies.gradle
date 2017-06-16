@@ -51,7 +51,7 @@ ext{
             supportAnnotations      : "com.android.support:support-annotations:$supportLibVersion",
             supportCardView         : "com.android.support:cardview-v7:$supportLibVersion",
             supportCustomTabs       : "com.android.support:customtabs:$supportLibVersion",
-            supportMultidex         : 'com.android.support:multidex:1.0.1',
+            supportMultidex         : "com.android.support:multidex:1.0.1",
 
 //            kotlinStdlib            : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
 //            kotlinReflect           : "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion",

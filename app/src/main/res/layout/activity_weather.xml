@@ -47,7 +47,9 @@
 
         </RelativeLayout>
 
+
         <android.support.v4.view.ViewPager
+            android:id="@+id/weatherViewPager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
@@ -61,6 +63,7 @@
         </RelativeLayout>
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/forecastRv"
             android:layout_width="match_parent"
             android:layout_height="100dp">
 

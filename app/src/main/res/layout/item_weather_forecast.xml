@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.nickming.kotlinlearning.bean.Weather.DailyItem"></import>
+
+        <import type="com.nickming.kotlinlearning.util.WeatherUtil"></import>
+
+        <variable
+            name="daily"
+            type="DailyItem">
+        </variable>
+    </data>
+
+    <LinearLayout
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:background="@color/dark_block"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/weatherForecastDateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="3dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_middle"/>
+
+        <ImageView
+            android:id="@+id/weatherForecastIv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_100"/>
+
+        <TextView
+            android:id="@+id/weatherForecastTmpTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="3dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_middle"/>
+
+    </LinearLayout>
+</layout>

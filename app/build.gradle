@@ -15,7 +15,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
-    dataBinding{
+    dataBinding {
         enabled true
     }
 
@@ -32,11 +32,9 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
 
-    def dependencies=rootProject.ext.dependencies
+    def dependencies = rootProject.ext.dependencies
 
     compile dependencies.supportAppCompat
     compile dependencies.supportDesign
@@ -54,6 +52,7 @@ dependencies {
     compile dependencies.okhttp3
     compile dependencies.okhttpLoggingInterceptor
 
+
     compile dependencies.glide
     compile dependencies.dagger
     kapt dependencies.daggerCompiler
@@ -62,7 +61,9 @@ dependencies {
 //    compile dependencies.kotlinStdlib
 //    compile dependencies.kotlinReflect
 
-    kapt "com.android.databinding:compiler:2.3.0"
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
+    testCompile 'junit:junit:4.12'
+    kapt 'com.android.databinding:compiler:2.3.0'
 }
 
 kapt {
