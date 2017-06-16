@@ -6,7 +6,7 @@
 
 采用了主流的Android app架构设计
 
-![主界面](./screenshots/main.png)
+<img src="./screenshots/main.png" width="320" height="640"/> 
 
 ## Framework
 
