@@ -51,6 +51,7 @@ dependencies {
     compile dependencies.retrofitGsonConverter
     compile dependencies.okhttp3
     compile dependencies.okhttpLoggingInterceptor
+    compile dependencies.magicIndicator
 
 
     compile dependencies.glide

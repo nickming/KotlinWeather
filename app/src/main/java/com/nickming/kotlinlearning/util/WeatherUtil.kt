@@ -60,4 +60,5 @@ object WeatherUtil {
         calendar.time = realDate
         return SimpleDateFormat("EEEE").format(calendar.time)
     }
+
 }

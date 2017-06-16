@@ -6,6 +6,8 @@
 
 采用了主流的Android app架构设计
 
+![主界面](./screenshots/main.png)
+
 ## Framework
 
 ### kotlin

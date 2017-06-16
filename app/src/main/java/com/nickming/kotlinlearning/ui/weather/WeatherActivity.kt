@@ -40,11 +40,6 @@ class WeatherActivity : BaseActivity<ActivityWeatherBinding>(), WeatherContract.
                 return mFragments.get(position)
             }
 
-//            override fun getItemPosition(`object`: Any?): Int {
-//                var fragment:CityWeatherFragment= `object` as CityWeatherFragment
-//
-//            }
-
             override fun getCount(): Int {
                 return mFragments.size
             }
@@ -53,7 +48,7 @@ class WeatherActivity : BaseActivity<ActivityWeatherBinding>(), WeatherContract.
     }
 
     private fun initFragments() {
-        mFragments = ArrayList()
+        mFragments = mutableListOf()
         mFragments.add(CityWeatherFragment.newInstance("dongguan"))
     }
 
@@ -62,6 +57,7 @@ class WeatherActivity : BaseActivity<ActivityWeatherBinding>(), WeatherContract.
         forecastRv.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
         forecastRv.adapter = mWeatherAdapter
     }
+
 
     override fun changeBackgroundColor(color: Int) {
 

@@ -60,6 +60,13 @@
             android:layout_width="match_parent"
             android:layout_height="10dp">
 
+            <net.lucode.hackware.magicindicator.MagicIndicator
+                android:id="@+id/weatherIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </net.lucode.hackware.magicindicator.MagicIndicator>
+
         </RelativeLayout>
 
         <android.support.v7.widget.RecyclerView
