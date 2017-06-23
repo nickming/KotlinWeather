@@ -1,5 +1,6 @@
 package com.nickming.kotlinlearning.ui.weather
 
+import com.baidu.location.BDLocation
 import com.nickming.kotlinlearning.bean.JsonResult
 import com.nickming.kotlinlearning.bean.Weather
 import rx.Observable
@@ -16,14 +17,18 @@ interface WeatherContract {
     interface View {
         fun setWeatherData(weather: Weather)
 
-        fun changeBackgroundColor(color:Int)
+        fun changeBackgroundColor(color: Int)
     }
 
     interface Model {
         fun getWeatherData(city: String): Observable<JsonResult>
+
+        fun getLocationData():Observable<BDLocation>
     }
 
     interface Presetner {
         fun getWeatherData(city: String)
+
+        fun getLocationData()
     }
 }

@@ -1,5 +1,6 @@
 package com.nickming.kotlinlearning.ui.weather
 
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Build
 import android.os.Bundle
@@ -18,6 +19,10 @@ import kotlinx.android.synthetic.main.activity_weather.*
 import javax.inject.Inject
 
 class WeatherActivity : BaseActivity<ActivityWeatherBinding>(), WeatherContract.View {
+
+    companion object {
+        const val TAG = "WeatherActivity"
+    }
 
 
     @Inject lateinit var mPresenter: WeatherPresenter
@@ -45,6 +50,7 @@ class WeatherActivity : BaseActivity<ActivityWeatherBinding>(), WeatherContract.
             }
         }
         weatherViewPager.adapter = mAdapter
+        mPresenter.getLocationData()
     }
 
     private fun initFragments() {
@@ -64,10 +70,12 @@ class WeatherActivity : BaseActivity<ActivityWeatherBinding>(), WeatherContract.
     }
 
     override fun setWeatherData(weather: Weather) {
-        LogUtil.i("tag", weather.basic.city)
+        LogUtil.i(TAG, weather.basic.city)
         mDataBinding.weather = weather
         mFragments.get(0).refreshWeather(weather)
         initRecyclerView(weather.daily_forecast)
+        var intent = Intent(this, WeatherUpdateService::class.java)
+        startService(intent)
     }
 
 }

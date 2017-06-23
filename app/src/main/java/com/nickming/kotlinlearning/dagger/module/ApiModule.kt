@@ -2,6 +2,7 @@ package com.nickming.kotlinlearning.dagger.module
 
 import android.content.Context
 import android.util.Log
+import com.baidu.location.LocationClient
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.nickming.kotlinlearning.api.WeatherApi
@@ -59,4 +60,6 @@ class ApiModule {
     @Provides fun provideGson() = GsonBuilder().create()
 
     @Provides fun provideApi(retrofit: Retrofit) = retrofit.create(WeatherApi::class.java)
+
+    @Provides fun provideLocationClient(context: Context) = LocationClient(context)
 }
