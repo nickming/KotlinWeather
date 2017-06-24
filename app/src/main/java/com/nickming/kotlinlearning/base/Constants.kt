@@ -9,7 +9,12 @@ package com.nickming.kotlinlearning.base
  */
 class Constants {
 
-    companion object{
-        const val WEATHER_API_KEY="19713447578c4afe8c12a351d46ea922"
+    companion object {
+        const val WEATHER_API_KEY = "19713447578c4afe8c12a351d46ea922"
+
+        const val WEATHER_SP_REFRESH = "weather_refresh"
+        const val WEATHER_SP_THEME = "weather_theme"
+        const val WEATHER_SP_CLEAR_CACHE = "clear_cache"
+
     }
 }

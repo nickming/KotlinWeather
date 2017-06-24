@@ -22,60 +22,71 @@
         android:orientation="vertical"
         tools:context="com.nickming.kotlinlearning.ui.weather.WeatherActivity">
 
-
-        <RelativeLayout
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/weatherRefreshLayout"
             android:layout_width="match_parent"
-            android:layout_height="?android:actionBarSize">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/cityNameTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:text="@{weather.basic.city}"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_large"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:src="@mipmap/ic_menu"/>
-
-        </RelativeLayout>
-
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/weatherViewPager"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-        </android.support.v4.view.ViewPager>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="10dp">
-
-            <net.lucode.hackware.magicindicator.MagicIndicator
-                android:id="@+id/weatherIndicator"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            </net.lucode.hackware.magicindicator.MagicIndicator>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:actionBarSize">
 
-        </RelativeLayout>
+                    <TextView
+                        android:id="@+id/cityNameTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:text="@{weather.basic.city}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_large"/>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/forecastRv"
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
+                    <ImageView
+                        android:id="@+id/weatherSetting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:src="@mipmap/ic_menu"/>
 
-        </android.support.v7.widget.RecyclerView>
+                </RelativeLayout>
 
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/weatherViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                </android.support.v4.view.ViewPager>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp">
+
+                    <net.lucode.hackware.magicindicator.MagicIndicator
+                        android:id="@+id/weatherIndicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </net.lucode.hackware.magicindicator.MagicIndicator>
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/forecastRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
     </LinearLayout>
 </layout>
 

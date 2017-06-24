@@ -37,6 +37,6 @@ class WeatherUpdateService : Service() {
     }
 
     fun updateWeather(): Unit {
-        mPresenter.getWeatherData("dongguan")
+//        mPresenter.getWeatherData("dongguan")
     }
 }

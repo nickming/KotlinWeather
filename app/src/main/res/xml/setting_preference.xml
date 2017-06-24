@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="基本设置">
+
+        <Preference
+            android:key="weather_refresh"
+            android:title="自动更新"
+            android:summary="设置自动更新的时间间隔">
+        </Preference>
+
+        <Preference
+            android:key="weather_theme"
+            android:title="更换主题"
+            android:summary="选择喜欢的主题">
+        </Preference>
+
+        <Preference
+            android:key="clear_cache"
+            android:summary="删除应用缓存的数据"
+            android:title="清空缓存" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="其它">
+        <Preference
+            android:summary="V1.0"
+            android:title="当前版本">
+
+        </Preference>
+
+        <Preference
+            android:summary="962570483@qq.com"
+            android:title="Nickming">
+
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

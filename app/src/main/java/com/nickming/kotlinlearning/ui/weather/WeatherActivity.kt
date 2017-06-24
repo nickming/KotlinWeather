@@ -14,6 +14,7 @@ import com.nickming.kotlinlearning.base.getMainComponent
 import com.nickming.kotlinlearning.bean.Weather
 import com.nickming.kotlinlearning.dagger.module.ActivityModule
 import com.nickming.kotlinlearning.databinding.ActivityWeatherBinding
+import com.nickming.kotlinlearning.ui.setting.SettingActivity
 import com.nickming.kotlinlearning.util.LogUtil
 import kotlinx.android.synthetic.main.activity_weather.*
 import javax.inject.Inject
@@ -29,6 +30,7 @@ class WeatherActivity : BaseActivity<ActivityWeatherBinding>(), WeatherContract.
     lateinit var mFragments: MutableList<CityWeatherFragment>
     lateinit var mAdapter: FragmentStatePagerAdapter
     lateinit var mWeatherAdapter: WeatherAdapter
+
 
     override fun createDataBinding(savedInstanceState: Bundle?): ActivityWeatherBinding {
         return DataBindingUtil.setContentView(this, R.layout.activity_weather)
@@ -49,7 +51,15 @@ class WeatherActivity : BaseActivity<ActivityWeatherBinding>(), WeatherContract.
                 return mFragments.size
             }
         }
+
+        weatherSetting.setOnClickListener {
+            v ->
+            val intent = Intent(this@WeatherActivity, SettingActivity::class.java)
+            startActivity(intent)
+        }
+
         weatherViewPager.adapter = mAdapter
+        weatherRefreshLayout.setColorSchemeColors(getColor(R.color.purple))
         mPresenter.getLocationData()
     }
 
